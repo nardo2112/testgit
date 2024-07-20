@@ -1,4 +1,4 @@
-## Funcionamiento del proyecto
+## Funcionamiento del proyectooo
 El proyecto consiste en scrapear las carreras que aparecen en la lista de carreras de pregrado de la UNMSM. El termino scrapear significa, en palabras sencillas, extraer informacion de una pagina web, por ejemplo, si quisieras buscar una carrera dentro de las tantas que hay, podrias almacenarlas todas en un txt y luego aplicando ciertos filtros, reducir tu enorme lista a una que contenga solo carreras de ingenieria, o relacionadas al area de salud. Afortunadamente la pagina de San Marcos ya cuenta con la opcion de filtrar, pero en un caso hipotetico donde no lo haya, o la informacion sea demasiada y quieras aplicar filtros mas rigurosos, web scraping seria una muy buena alternativa. A continuacion explico el funcionamiento de mi codigo.
 
 En la parte superior se colocan, similar a c++, las bibliotecas que se usaran y que permitiran el uso de ciertos comandos
