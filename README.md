@@ -1,4 +1,4 @@
-## Funcionamiento del proyectooo
+## Funcionamiento del proyecto
 El proyecto consiste en scrapear las carreras que aparecen en la lista de carreras de pregrado de la UNMSM. El termino scrapear significa, en palabras sencillas, extraer informacion de una pagina web, por ejemplo, si quisieras buscar una carrera dentro de las tantas que hay, podrias almacenarlas todas en un txt y luego aplicando ciertos filtros, reducir tu enorme lista a una que contenga solo carreras de ingenieria, o relacionadas al area de salud. Afortunadamente la pagina de San Marcos ya cuenta con la opcion de filtrar, pero en un caso hipotetico donde no lo haya, o la informacion sea demasiada y quieras aplicar filtros mas rigurosos, web scraping seria una muy buena alternativa. A continuacion explico el funcionamiento de mi codigo.
 
 En la parte superior se colocan, similar a c++, las bibliotecas que se usaran y que permitiran el uso de ciertos comandos
@@ -13,8 +13,11 @@ from webdriver_manager.chrome import ChromeDriverManager #pip install webdriver-
 ```
 
 La __primera linea__, me permite usar el comando sleep(t) donde t es el tiempo en que mi codigo hace una pausa para que la pagina termine de cargarse y los siguientes comandos puedan funcionar correctamente.
+
 La __segunda linea__, importa webdriver, que es la herramienta que permite interactuar con el navegador.
+
 La __tercera linea__, me permite usar el comando By con el uso mas adelante para buscar elementos en especifico, ya sea por su clase, ID, XPATH, entre otros.
+
 La __cuarta y quinta linea__, son las mas importantes porque con ellas voy a designar a Chrome como el navegador que usare para realizar mi proyecto. Para ello uso las siguiente lineas de codigo:
 
 ```py
