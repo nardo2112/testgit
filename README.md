@@ -12,7 +12,7 @@ from webdriver_manager.chrome import ChromeDriverManager #pip install webdriver-
 
 ```
 
-La __primera línea__, me permite usar el comando sleep(t) donde t es el tiempo en que mi código hace una pausa para que la pagina termine de cargarse y los siguientes comandos puedan funcionar correctamente.
+La __primera línea__, me permite usar el comando `sleep(t)` donde t es el tiempo en que mi código hace una pausa para que la pagina termine de cargarse y los siguientes comandos puedan funcionar correctamente.
 
 La __segunda línea__, importa webdriver, que es la herramienta que permite interactuar con el navegador.
 
@@ -31,7 +31,7 @@ Con ChromeDriverManager ya no tengo la necesidad de instalar manualmente el webd
 
 Las líneas de arriba sirvieron para configurar el entorno de trabajo a usar, las siguientes líneas son, por así decirlo, las que realmente lo pondrán en marcha.
 
-Empiezo usando driver.get para especificar la url que se abrirá en mi navegador.
+Empiezo usando `driver.get` para especificar la url que se abrirá en mi navegador.
 
 ```py
 
@@ -39,7 +39,7 @@ driver.get('https://unmsm.edu.pe/formacion-academica/carreras-de-pregrado')
 
 ```
 
-Luego uso el comando sleep para darle tiempo a mi página a que vaya cargando antes de realizar los próximos comandos
+Luego uso el comando `sleep` para darle tiempo a mi página a que vaya cargando antes de realizar los próximos comandos
 
 ```py
 
@@ -51,7 +51,7 @@ carreras_list = []
 
 También de paso creo una lista en la cual almacenaré las carreras que extraiga más adelante.
 
-Usando el método de búsqueda por XPATH ubico a las etiquetas p con la clase 'mb-13px color-rojo-sm'. Dicha clase la obtuve inspeccionando en la página de San Marcos y noté que ellas contenían el nombre de las carreras de pregrado. Al ser varios elementos con la misma clase uso el comando driver.find_elements, notese que está en plural. Entonces guardo todas ellas en mi variable 'carreras', y con ayuda de un for almaceno una a una dentro mi lista creada anteriormente.
+Usando el método de búsqueda por XPATH ubico a las etiquetas p con la clase 'mb-13px color-rojo-sm'. Dicha clase la obtuve inspeccionando en la página de San Marcos y noté que ellas contenían el nombre de las carreras de pregrado. Al ser varios elementos con la misma clase uso el comando `driver.find_elements`, notese que está en plural. Entonces guardo todas ellas en mi variable 'carreras', y con ayuda de un for almaceno una a una dentro mi lista creada anteriormente.
 
 ```py
 
@@ -64,7 +64,7 @@ Usando el método de búsqueda por XPATH ubico a las etiquetas p con la clase 'm
 
 Uso sleep para esperar un poco antes de iniciar mi siguiente comando.
 
-En vista que es una lista algo extensa, las carreras no fueron colocadas en una página, sino que la dividieron en 9 páginas, por lo que si quería seguir obteniendo las demás necesitaba moverme a la siguiente página. Entonces nuevamente use el comando driver.find_element para buscar el botón que me lleva a la siguiente página (resulto que no fue un botón, sino un hipervínculo), para ello nuevamente una inspección de la página y ubicar al responsable de dirigirme a la siguiente página.
+En vista que es una lista algo extensa, las carreras no fueron colocadas en una página, sino que la dividieron en 9 páginas, por lo que si quería seguir obteniendo las demás necesitaba moverme a la siguiente página. Entonces nuevamente use el comando `driver.find_element` para buscar el botón que me lleva a la siguiente página (resulto que no fue un botón, sino un hipervínculo), para ello nuevamente una inspección de la página y ubicar al responsable de dirigirme a la siguiente página.
 
 ![navigator](/proyect-web-scraping/images/navigator.png)
 
@@ -76,7 +76,7 @@ En vista que es una lista algo extensa, las carreras no fueron colocadas en una 
 
 ```
 
-Lo nuevo aquí fue que no solo era necesario ubicar al elemento, sino que también debía realizar un click para pasar de página, entonces una vez ubicado y guardado en mi variable 'next', uso el comando next.click() para realizar dicha acción.
+Lo nuevo aquí fue que no solo era necesario ubicar al elemento, sino que también debía realizar un click para pasar de página, entonces una vez ubicado y guardado en mi variable `next`, uso el comando `next.click()` para realizar dicha acción.
 En esta parte invertí regular tiempo porque no lograba hacer que ocurra, tengo costumbre de no borrar líneas de código fallidos porque puedo revisarlos más adelante y recordar en que me equivoque, por eso en mi código original se puede apreciar algunos de los intentos que me tomo y muchos otros que borre que no aparecen en mi versión final. 
 
 ![errores](/proyect-web-scraping/images/errores.png)
@@ -91,7 +91,7 @@ for i in range(9):
 
 ```
 
-Por último, uso .join() para guardar los elementos de mi lista en strings y separarlos en cada línea los cuales guardo en mi variable 'final' y los exporto en un txt.
+Por último, uso `.join()` para guardar los elementos de mi lista en strings y separarlos en cada línea los cuales guardo en mi variable 'final' y los exporto en un txt.
 
 ```py
 
